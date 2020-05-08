@@ -3,18 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029538657ECEF07AABEAB450 /* Pods_Kiwari_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213D06B41BCCEE9D5FACF27 /* Pods_Kiwari_ios_test.framework */; };
+		717A7174AC566FF46E42EDB8 /* Pods_Kiwari_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */; };
 		FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDEB2465345000C16A33 /* AppDelegate.swift */; };
 		FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDED2465345000C16A33 /* SceneDelegate.swift */; };
-		FBB0EDF02465345000C16A33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDEF2465345000C16A33 /* ViewController.swift */; };
 		FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EDF12465345000C16A33 /* Main.storyboard */; };
 		FBB0EDF62465345000C16A33 /* Kiwari_ios_test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDF42465345000C16A33 /* Kiwari_ios_test.xcdatamodeld */; };
 		FBB0EDF82465345500C16A33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EDF72465345500C16A33 /* Assets.xcassets */; };
 		FBB0EDFB2465345500C16A33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EDF92465345500C16A33 /* LaunchScreen.storyboard */; };
 		FBB0EE062465345500C16A33 /* Kiwari_ios_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE052465345500C16A33 /* Kiwari_ios_testTests.swift */; };
+		FBB0EE16246535E000C16A33 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE10246535E000C16A33 /* LoginPresenter.swift */; };
+		FBB0EE17246535E000C16A33 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE11246535E000C16A33 /* LoginWorker.swift */; };
+		FBB0EE18246535E000C16A33 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE12246535E000C16A33 /* LoginRouter.swift */; };
+		FBB0EE19246535E000C16A33 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE13246535E000C16A33 /* LoginModels.swift */; };
+		FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE15246535E000C16A33 /* LoginInteractor.swift */; };
+		FBB0EE222465370500C16A33 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE212465370500C16A33 /* Users.swift */; };
+		FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE25246548DB00C16A33 /* LoginViewController.swift */; };
+		FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */; };
+		FBB0EE2A24659B0200C16A33 /* FirebaseConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */; };
+		FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2C2465A8FB00C16A33 /* ChatsPresenter.swift */; };
+		FBB0EE332465A8FC00C16A33 /* ChatsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2D2465A8FB00C16A33 /* ChatsWorker.swift */; };
+		FBB0EE342465A8FC00C16A33 /* ChatsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2E2465A8FB00C16A33 /* ChatsRouter.swift */; };
+		FBB0EE352465A8FC00C16A33 /* ChatsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2F2465A8FB00C16A33 /* ChatsModels.swift */; };
+		FBB0EE362465A8FC00C16A33 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE302465A8FB00C16A33 /* ChatsViewController.swift */; };
+		FBB0EE372465A8FC00C16A33 /* ChatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE312465A8FC00C16A33 /* ChatsInteractor.swift */; };
+		FBB0EE452465C07000C16A33 /* NavigationBarChat.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE442465C07000C16A33 /* NavigationBarChat.xib */; };
+		FBB0EE472465C1DE00C16A33 /* NavigationBarChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE462465C1DE00C16A33 /* NavigationBarChatView.swift */; };
+		FBB0EE4A2465D5E900C16A33 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE492465D5E900C16A33 /* UIImageExtension.swift */; };
+		FBB0EE4E2465DBDF00C16A33 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE4D2465DBDF00C16A33 /* Chat.swift */; };
+		FBB0EE542465E6AD00C16A33 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */; };
+		FBB0EE572465ED9500C16A33 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */; };
+		FBB0EE582465ED9500C16A33 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,10 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2135545D812B883BF82F20 /* Pods-Kiwari-ios-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-testTests.debug.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-testTests/Pods-Kiwari-ios-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2213D06B41BCCEE9D5FACF27 /* Pods_Kiwari_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwari_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5973F3B9E7B6F20F3AD23082 /* Pods-Kiwari-ios-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-testTests.release.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-testTests/Pods-Kiwari-ios-testTests.release.xcconfig"; sourceTree = "<group>"; };
+		63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwari_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B686404202A803412C062E6 /* Pods-Kiwari-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
+		96002AF072D3D3CC4A9194A0 /* Pods-Kiwari-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.release.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.release.xcconfig"; sourceTree = "<group>"; };
 		FBB0EDE82465345000C16A33 /* Kiwari-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kiwari-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0EDEB2465345000C16A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB0EDED2465345000C16A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FBB0EDEF2465345000C16A33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FBB0EDF22465345000C16A33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBB0EDF52465345000C16A33 /* Kiwari_ios_test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kiwari_ios_test.xcdatamodel; sourceTree = "<group>"; };
 		FBB0EDF72465345500C16A33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +68,28 @@
 		FBB0EE012465345500C16A33 /* Kiwari-ios-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kiwari-ios-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0EE052465345500C16A33 /* Kiwari_ios_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kiwari_ios_testTests.swift; sourceTree = "<group>"; };
 		FBB0EE072465345500C16A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB0EE10246535E000C16A33 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		FBB0EE11246535E000C16A33 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
+		FBB0EE12246535E000C16A33 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FBB0EE13246535E000C16A33 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		FBB0EE15246535E000C16A33 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		FBB0EE212465370500C16A33 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		FBB0EE25246548DB00C16A33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstans.swift; sourceTree = "<group>"; };
+		FBB0EE2C2465A8FB00C16A33 /* ChatsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsPresenter.swift; sourceTree = "<group>"; };
+		FBB0EE2D2465A8FB00C16A33 /* ChatsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsWorker.swift; sourceTree = "<group>"; };
+		FBB0EE2E2465A8FB00C16A33 /* ChatsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsRouter.swift; sourceTree = "<group>"; };
+		FBB0EE2F2465A8FB00C16A33 /* ChatsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsModels.swift; sourceTree = "<group>"; };
+		FBB0EE302465A8FB00C16A33 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		FBB0EE312465A8FC00C16A33 /* ChatsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsInteractor.swift; sourceTree = "<group>"; };
+		FBB0EE442465C07000C16A33 /* NavigationBarChat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarChat.xib; sourceTree = "<group>"; };
+		FBB0EE462465C1DE00C16A33 /* NavigationBarChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarChatView.swift; sourceTree = "<group>"; };
+		FBB0EE492465D5E900C16A33 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		FBB0EE4D2465DBDF00C16A33 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
+		FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029538657ECEF07AABEAB450 /* Pods_Kiwari_ios_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +105,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717A7174AC566FF46E42EDB8 /* Pods_Kiwari_ios_testTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2BB038DAE62F8BA6425999 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B686404202A803412C062E6 /* Pods-Kiwari-ios-test.debug.xcconfig */,
+				96002AF072D3D3CC4A9194A0 /* Pods-Kiwari-ios-test.release.xcconfig */,
+				0A2135545D812B883BF82F20 /* Pods-Kiwari-ios-testTests.debug.xcconfig */,
+				5973F3B9E7B6F20F3AD23082 /* Pods-Kiwari-ios-testTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		93F370B0DFB794A3857CE45C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2213D06B41BCCEE9D5FACF27 /* Pods_Kiwari_ios_test.framework */,
+				63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBB0EDDF2465345000C16A33 = {
 			isa = PBXGroup;
 			children = (
 				FBB0EDEA2465345000C16A33 /* Kiwari-ios-test */,
 				FBB0EE042465345500C16A33 /* Kiwari-ios-testTests */,
 				FBB0EDE92465345000C16A33 /* Products */,
+				2E2BB038DAE62F8BA6425999 /* Pods */,
+				93F370B0DFB794A3857CE45C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,14 +155,16 @@
 		FBB0EDEA2465345000C16A33 /* Kiwari-ios-test */ = {
 			isa = PBXGroup;
 			children = (
+				FBB0EE20246536E800C16A33 /* Commons */,
+				FBB0EE1C2465369100C16A33 /* Scenes */,
 				FBB0EDEB2465345000C16A33 /* AppDelegate.swift */,
 				FBB0EDED2465345000C16A33 /* SceneDelegate.swift */,
-				FBB0EDEF2465345000C16A33 /* ViewController.swift */,
 				FBB0EDF12465345000C16A33 /* Main.storyboard */,
 				FBB0EDF72465345500C16A33 /* Assets.xcassets */,
 				FBB0EDF92465345500C16A33 /* LaunchScreen.storyboard */,
 				FBB0EDFC2465345500C16A33 /* Info.plist */,
 				FBB0EDF42465345000C16A33 /* Kiwari_ios_test.xcdatamodeld */,
+				FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */,
 			);
 			path = "Kiwari-ios-test";
 			sourceTree = "<group>";
@@ -102,6 +178,89 @@
 			path = "Kiwari-ios-testTests";
 			sourceTree = "<group>";
 		};
+		FBB0EE1C2465369100C16A33 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE2B2465A65E00C16A33 /* Chats */,
+				FBB0EE1D2465369900C16A33 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FBB0EE1D2465369900C16A33 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE25246548DB00C16A33 /* LoginViewController.swift */,
+				FBB0EE10246535E000C16A33 /* LoginPresenter.swift */,
+				FBB0EE11246535E000C16A33 /* LoginWorker.swift */,
+				FBB0EE12246535E000C16A33 /* LoginRouter.swift */,
+				FBB0EE13246535E000C16A33 /* LoginModels.swift */,
+				FBB0EE15246535E000C16A33 /* LoginInteractor.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FBB0EE20246536E800C16A33 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE4C2465DBB900C16A33 /* Utils */,
+				FBB0EE4B2465DBA500C16A33 /* Models */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		FBB0EE2B2465A65E00C16A33 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE392465B5BD00C16A33 /* View */,
+				FBB0EE2C2465A8FB00C16A33 /* ChatsPresenter.swift */,
+				FBB0EE2D2465A8FB00C16A33 /* ChatsWorker.swift */,
+				FBB0EE2E2465A8FB00C16A33 /* ChatsRouter.swift */,
+				FBB0EE2F2465A8FB00C16A33 /* ChatsModels.swift */,
+				FBB0EE302465A8FB00C16A33 /* ChatsViewController.swift */,
+				FBB0EE312465A8FC00C16A33 /* ChatsInteractor.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		FBB0EE392465B5BD00C16A33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */,
+				FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */,
+				FBB0EE462465C1DE00C16A33 /* NavigationBarChatView.swift */,
+				FBB0EE442465C07000C16A33 /* NavigationBarChat.xib */,
+				FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBB0EE482465D5D800C16A33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE492465D5E900C16A33 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBB0EE4B2465DBA500C16A33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE212465370500C16A33 /* Users.swift */,
+				FBB0EE4D2465DBDF00C16A33 /* Chat.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FBB0EE4C2465DBB900C16A33 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE482465D5D800C16A33 /* Extensions */,
+				FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBB0EE0A2465345500C16A33 /* Build configuration list for PBXNativeTarget "Kiwari-ios-test" */;
 			buildPhases = (
+				75719F540F84022978267500 /* [CP] Check Pods Manifest.lock */,
 				FBB0EDE42465345000C16A33 /* Sources */,
 				FBB0EDE52465345000C16A33 /* Frameworks */,
 				FBB0EDE62465345000C16A33 /* Resources */,
+				1A6F6765388F114545E90F58 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBB0EE0D2465345500C16A33 /* Build configuration list for PBXNativeTarget "Kiwari-ios-testTests" */;
 			buildPhases = (
+				0CED1F421EAAA45ABE1024E0 /* [CP] Check Pods Manifest.lock */,
 				FBB0EDFD2465345500C16A33 /* Sources */,
 				FBB0EDFE2465345500C16A33 /* Frameworks */,
 				FBB0EDFF2465345500C16A33 /* Resources */,
@@ -183,7 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB0EE452465C07000C16A33 /* NavigationBarChat.xib in Resources */,
+				FBB0EE582465ED9500C16A33 /* ChatTableViewCell.xib in Resources */,
 				FBB0EDFB2465345500C16A33 /* LaunchScreen.storyboard in Resources */,
+				FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */,
 				FBB0EDF82465345500C16A33 /* Assets.xcassets in Resources */,
 				FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */,
 			);
@@ -198,15 +363,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CED1F421EAAA45ABE1024E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kiwari-ios-testTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A6F6765388F114545E90F58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75719F540F84022978267500 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kiwari-ios-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FBB0EDE42465345000C16A33 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB0EE472465C1DE00C16A33 /* NavigationBarChatView.swift in Sources */,
+				FBB0EE332465A8FC00C16A33 /* ChatsWorker.swift in Sources */,
+				FBB0EE4A2465D5E900C16A33 /* UIImageExtension.swift in Sources */,
+				FBB0EE542465E6AD00C16A33 /* ChatTableView.swift in Sources */,
+				FBB0EE2A24659B0200C16A33 /* FirebaseConstans.swift in Sources */,
+				FBB0EE572465ED9500C16A33 /* ChatTableViewCell.swift in Sources */,
 				FBB0EDF62465345000C16A33 /* Kiwari_ios_test.xcdatamodeld in Sources */,
-				FBB0EDF02465345000C16A33 /* ViewController.swift in Sources */,
+				FBB0EE19246535E000C16A33 /* LoginModels.swift in Sources */,
+				FBB0EE342465A8FC00C16A33 /* ChatsRouter.swift in Sources */,
 				FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */,
+				FBB0EE362465A8FC00C16A33 /* ChatsViewController.swift in Sources */,
 				FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */,
+				FBB0EE372465A8FC00C16A33 /* ChatsInteractor.swift in Sources */,
+				FBB0EE16246535E000C16A33 /* LoginPresenter.swift in Sources */,
+				FBB0EE18246535E000C16A33 /* LoginRouter.swift in Sources */,
+				FBB0EE4E2465DBDF00C16A33 /* Chat.swift in Sources */,
+				FBB0EE352465A8FC00C16A33 /* ChatsModels.swift in Sources */,
+				FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */,
+				FBB0EE17246535E000C16A33 /* LoginWorker.swift in Sources */,
+				FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */,
+				FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */,
+				FBB0EE222465370500C16A33 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +611,7 @@
 		};
 		FBB0EE0B2465345500C16A33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B686404202A803412C062E6 /* Pods-Kiwari-ios-test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -381,6 +629,7 @@
 		};
 		FBB0EE0C2465345500C16A33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96002AF072D3D3CC4A9194A0 /* Pods-Kiwari-ios-test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -398,6 +647,7 @@
 		};
 		FBB0EE0E2465345500C16A33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2135545D812B883BF82F20 /* Pods-Kiwari-ios-testTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +669,7 @@
 		};
 		FBB0EE0F2465345500C16A33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5973F3B9E7B6F20F3AD23082 /* Pods-Kiwari-ios-testTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

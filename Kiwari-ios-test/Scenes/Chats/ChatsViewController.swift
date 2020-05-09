@@ -11,113 +11,173 @@
 //
 
 import UIKit
+import GrowingTextView
 
 protocol ChatsDisplayLogic: class
 {
-  func displaySomething(viewModel: Chats.Something.ViewModel)
+    func displayChat(viewModel: Chats.ChatModel.ViewModel)
 }
 
-class ChatsViewController: UIViewController, ChatsDisplayLogic
+class ChatsViewController: UIViewController
 {
-  var interactor: ChatsBusinessLogic?
-  var router: (NSObjectProtocol & ChatsRoutingLogic & ChatsDataPassing)?
+    var interactor: ChatsBusinessLogic?
+    var router: (NSObjectProtocol & ChatsRoutingLogic & ChatsDataPassing)?
     
     
     @IBOutlet weak var navBar: NavigationBarChatView!
     @IBOutlet weak var chatTable: UITableView!
+    @IBOutlet weak var message: GrowingTextView!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var bottomMessage: NSLayoutConstraint!
+    @IBOutlet weak var messageView: UIView!
     
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ChatsInteractor()
-    let presenter = ChatsPresenter()
-    let router = ChatsRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
     
-    setupView()
-    doSomething()
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
     
-    chatTable.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
-    chatTable.rowHeight = UITableView.automaticDimension
-     chatTable.estimatedRowHeight = 10.0
+    // MARK: Setup
     
-    navBar.setupView(user: User2())
-  }
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ChatsInteractor()
+        let presenter = ChatsPresenter()
+        let router = ChatsRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        setupView()
+        fetchChats()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     
     func setupView() {
-     
-      
+        chatTable.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
+        chatTable.rowHeight = UITableView.automaticDimension
+        chatTable.estimatedRowHeight = 10.0
+        
+        if let user = UserStorage.getUser() {
+            
+            navBar.setupView(user: user)
+        }
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let thickness: CGFloat = 0.8
+        let topBorder = CALayer()
+        topBorder.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: thickness)
+        topBorder.backgroundColor = UIColor.lightGray.cgColor
+        messageView.layer.addSublayer(topBorder)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
+        
+        view.addGestureRecognizer(tap)
     }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = Chats.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: Chats.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    // MARK: Fetch The Chats
+    
+    func fetchChats()
+    {
+        let request = Chats.ChatModel.Request()
+        interactor?.fetchChat(request: request)
+    }
+    
+    // MARK: Handling Keyboard
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.bottomMessage.constant == 0 {
+                UIView.animate(withDuration: 2) {
+                    self.bottomMessage.constant += keyboardSize.height
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        view.endEditing(true)
+        if self.bottomMessage.constant != 0 {
+            UIView.animate(withDuration: 2) {
+                self.bottomMessage.constant = 0
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+    }
+    
+    @IBAction func sendClicked(_ sender: Any) {
+        
+    }
+    
+    
+    
 }
 
 extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = self.chatTable.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
+        let cell = self.chatTable.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
         
         return cell
-
+        
     }
-    
+}
 
+extension ChatsViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        sendButton.isEnabled = textView.text.count > 0
+    }
+}
+
+extension ChatsViewController: ChatsDisplayLogic {
     
+    // MARK: Display Chat
     
+    func displayChat(viewModel: Chats.ChatModel.ViewModel) {
+        
+    }
 }

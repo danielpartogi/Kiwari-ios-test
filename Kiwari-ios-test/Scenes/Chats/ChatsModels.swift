@@ -14,20 +14,8 @@ import UIKit
 
 enum Chats
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
+    // MARK: Use cases
+    
     
     enum ChatModel {
         struct Request {

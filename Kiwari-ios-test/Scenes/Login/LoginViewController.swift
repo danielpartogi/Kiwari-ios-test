@@ -39,6 +39,12 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     
     @IBOutlet weak var loginStackView: UIStackView!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var bottomLoginConstrain: NSLayoutConstraint!
+    
+    var user: [User]?
+    
     
     // MARK: Setup
     
@@ -71,15 +77,24 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     // MARK: View lifecycle
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
+        override func viewWillAppear(_ animated: Bool) {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+    
+            if AppState.sharedInstance.isLoggedIn() {
+                performSegue(withIdentifier: "Chats", sender: nil)
+            }
+        }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         setupView()
+        setupData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: SETUP THE VIEW
@@ -90,9 +105,13 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
-
-           view.addGestureRecognizer(tap)
         
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    private func setupData() {
+        user = Hardcodeduser.setHardcodedUser()
     }
     
     // MARK: Do something
@@ -113,23 +132,41 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     // MARK: Handling Keyboard
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (keyboardSize.height - self.loginStackView.frame.height/2) + 20
+            if self.bottomLoginConstrain.constant == 0 {
+                UIView.animate(withDuration: 2) {
+                    self.bottomLoginConstrain.constant += (keyboardSize.height - self.loginStackView.frame.height/2 + 20)
+                    self.view.layoutIfNeeded()
+                }
+                
+                
             }
         }
     }
     
-    @objc func keyboardWillHide(notification: NSNotification) {
-         view.endEditing(true)
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        view.endEditing(true)
+        if self.bottomLoginConstrain.constant != 0 {
+            UIView.animate(withDuration: 2) {
+                self.bottomLoginConstrain.constant = 0
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        //performSegue(withIdentifier: "Chats", sender: nil)
+        
+        guard let userItem = user else {return}
+        
+        if userItem[0].email == email.text && userItem[0].password == password.text {
+            AppState.sharedInstance.setupAuthorizedState(user: userItem[0])
+            performSegue(withIdentifier: "Chats", sender: nil)
+        } else if userItem[1].email == email.text && userItem[1].password == password.text {
+            AppState.sharedInstance.setupAuthorizedState(user: userItem[1])
+            performSegue(withIdentifier: "Chats", sender: nil)
+        }
+        
     }
     
 }

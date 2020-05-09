@@ -21,7 +21,7 @@
 		FBB0EE18246535E000C16A33 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE12246535E000C16A33 /* LoginRouter.swift */; };
 		FBB0EE19246535E000C16A33 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE13246535E000C16A33 /* LoginModels.swift */; };
 		FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE15246535E000C16A33 /* LoginInteractor.swift */; };
-		FBB0EE222465370500C16A33 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE212465370500C16A33 /* Users.swift */; };
+		FBB0EE222465370500C16A33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE212465370500C16A33 /* User.swift */; };
 		FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE25246548DB00C16A33 /* LoginViewController.swift */; };
 		FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */; };
 		FBB0EE2A24659B0200C16A33 /* FirebaseConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */; };
@@ -38,6 +38,11 @@
 		FBB0EE542465E6AD00C16A33 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */; };
 		FBB0EE572465ED9500C16A33 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */; };
 		FBB0EE582465ED9500C16A33 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */; };
+		FBB0EE5C2466D2FD00C16A33 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE5B2466D2FD00C16A33 /* AppState.swift */; };
+		FBB0EE5E2466D3B300C16A33 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE5D2466D3B200C16A33 /* UserStorage.swift */; };
+		FBB0EE602466D54900C16A33 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE5F2466D54900C16A33 /* Enums.swift */; };
+		FBB0EE622466D5C000C16A33 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE612466D5C000C16A33 /* KeychainManager.swift */; };
+		FBB0EE642466DABC00C16A33 /* HardcodedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +78,7 @@
 		FBB0EE12246535E000C16A33 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		FBB0EE13246535E000C16A33 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
 		FBB0EE15246535E000C16A33 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		FBB0EE212465370500C16A33 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		FBB0EE212465370500C16A33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBB0EE25246548DB00C16A33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstans.swift; sourceTree = "<group>"; };
@@ -90,6 +95,11 @@
 		FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
 		FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		FBB0EE5B2466D2FD00C16A33 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FBB0EE5D2466D3B200C16A33 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		FBB0EE5F2466D54900C16A33 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		FBB0EE612466D5C000C16A33 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +215,11 @@
 			children = (
 				FBB0EE4C2465DBB900C16A33 /* Utils */,
 				FBB0EE4B2465DBA500C16A33 /* Models */,
+				FBB0EE5B2466D2FD00C16A33 /* AppState.swift */,
+				FBB0EE5D2466D3B200C16A33 /* UserStorage.swift */,
+				FBB0EE5F2466D54900C16A33 /* Enums.swift */,
+				FBB0EE612466D5C000C16A33 /* KeychainManager.swift */,
+				FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -246,7 +261,7 @@
 		FBB0EE4B2465DBA500C16A33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FBB0EE212465370500C16A33 /* Users.swift */,
+				FBB0EE212465370500C16A33 /* User.swift */,
 				FBB0EE4D2465DBDF00C16A33 /* Chat.swift */,
 			);
 			path = Models;
@@ -434,26 +449,31 @@
 			files = (
 				FBB0EE472465C1DE00C16A33 /* NavigationBarChatView.swift in Sources */,
 				FBB0EE332465A8FC00C16A33 /* ChatsWorker.swift in Sources */,
+				FBB0EE602466D54900C16A33 /* Enums.swift in Sources */,
 				FBB0EE4A2465D5E900C16A33 /* UIImageExtension.swift in Sources */,
 				FBB0EE542465E6AD00C16A33 /* ChatTableView.swift in Sources */,
 				FBB0EE2A24659B0200C16A33 /* FirebaseConstans.swift in Sources */,
 				FBB0EE572465ED9500C16A33 /* ChatTableViewCell.swift in Sources */,
 				FBB0EDF62465345000C16A33 /* Kiwari_ios_test.xcdatamodeld in Sources */,
 				FBB0EE19246535E000C16A33 /* LoginModels.swift in Sources */,
+				FBB0EE5E2466D3B300C16A33 /* UserStorage.swift in Sources */,
 				FBB0EE342465A8FC00C16A33 /* ChatsRouter.swift in Sources */,
 				FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */,
+				FBB0EE642466DABC00C16A33 /* HardcodedUser.swift in Sources */,
 				FBB0EE362465A8FC00C16A33 /* ChatsViewController.swift in Sources */,
+				FBB0EE622466D5C000C16A33 /* KeychainManager.swift in Sources */,
 				FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */,
 				FBB0EE372465A8FC00C16A33 /* ChatsInteractor.swift in Sources */,
 				FBB0EE16246535E000C16A33 /* LoginPresenter.swift in Sources */,
 				FBB0EE18246535E000C16A33 /* LoginRouter.swift in Sources */,
 				FBB0EE4E2465DBDF00C16A33 /* Chat.swift in Sources */,
 				FBB0EE352465A8FC00C16A33 /* ChatsModels.swift in Sources */,
+				FBB0EE5C2466D2FD00C16A33 /* AppState.swift in Sources */,
 				FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */,
 				FBB0EE17246535E000C16A33 /* LoginWorker.swift in Sources */,
 				FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */,
 				FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */,
-				FBB0EE222465370500C16A33 /* Users.swift in Sources */,
+				FBB0EE222465370500C16A33 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

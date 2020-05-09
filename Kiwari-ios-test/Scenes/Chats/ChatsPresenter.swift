@@ -14,18 +14,15 @@ import UIKit
 
 protocol ChatsPresentationLogic
 {
-  func presentSomething(response: Chats.Something.Response)
+    func presentChat(response: Chats.ChatModel.Response)
 }
 
 class ChatsPresenter: ChatsPresentationLogic
 {
-  weak var viewController: ChatsDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: Chats.Something.Response)
-  {
-    let viewModel = Chats.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: ChatsDisplayLogic?
+    
+    // MARK: Present Chat
+    func presentChat(response: Chats.ChatModel.Response) {
+        
+    }
 }

@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
 struct Chat {
-    var senderName: String
-    var senderEmail: String
-    var senderAvatar: String
-    var time: String
-    var message: String
+    var name: String?
+    var email: String?
+    var avatar: String?
+    var time: Timestamp?
+    var message: String?
+    
+    init(doc: [String: Any]){
+        self.name = doc["name"] as? String
+        self.email = doc["email"] as? String
+        self.avatar = doc["avatar"] as? String
+        self.time = doc["time"] as? Timestamp
+        self.message = doc["message"] as? String
+    }
 }

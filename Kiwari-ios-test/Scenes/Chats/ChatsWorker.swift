@@ -14,16 +14,43 @@ import UIKit
 
 class ChatsWorker
 {
-    func getCollection(completion: @escaping (_ chats: [Chat]?) -> ()) {
-        
-        FirebaseConstans.refs.databaseChats.addSnapshotListener { documentSnapshot, error in
-                   if let snapshot = documentSnapshot {
-                    var chats = [[String : Any]]()
-                       for doc in snapshot.documents {
-                        chats.append(doc.data())
+    func changeListener(completion: @escaping (_ chat: Chat?) -> ()) {
+        FirebaseConstans.refs.databaseChats.order(by: "time", descending: false).addSnapshotListener { documentSnapshot, error in
+            if let snapshot = documentSnapshot {
+                for dc in snapshot.documentChanges {
+                    switch dc.type {
+                    case .added:
+                        let chat = Chat(doc: dc.document.data())
+                        if AppState.sharedInstance.isFirstListener() {
+                             print(dc.document.data())
+                            completion(chat)
+                        }
+                        
+                    case .modified: break
+                        
+                    case .removed: break
+                        
+                    }
+                    
+                }
+                UserStorage.saveFireListener(state: true)
+            }
+        }
+    }
+    
+    func getCollection(completion: @escaping (_ chats: [Chat]) -> ()) {
+        FirebaseConstans.refs.databaseChats.order(by: "time", descending:  false).getDocuments{ query, err in
+            if let err = err {
+                   print("Error getting documents: \(err)")
+               } else {
+                var data = [Chat]()
+                   for document in query!.documents {
+                    let chat = Chat(doc: document.data())
+                    data.append(chat)
                    }
-                    print(chats)
-           }
-       }
-       }
+                completion(data)
+               }
+            
+        }
+    }
 }

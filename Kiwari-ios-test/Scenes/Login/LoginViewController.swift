@@ -174,3 +174,18 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     }
     
 }
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case email:
+            password.becomeFirstResponder()
+        case password:
+            loginButton(self)
+        default:
+            password.becomeFirstResponder()
+        }
+        return false
+    }
+}

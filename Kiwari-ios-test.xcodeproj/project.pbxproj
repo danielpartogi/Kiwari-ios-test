@@ -158,6 +158,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FB6365DD2468B4A300BC7913 /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				FBB0EE67246838C800C16A33 /* LogoutPresenter.swift */,
+				FBB0EE68246838C800C16A33 /* LogoutWorker.swift */,
+				FBB0EE69246838C800C16A33 /* LogoutRouter.swift */,
+				FBB0EE6A246838C800C16A33 /* LogoutModels.swift */,
+				FBB0EE6B246838C800C16A33 /* LogoutViewController.swift */,
+				FBB0EE6C246838C800C16A33 /* LogoutInteractor.swift */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
 		FBB0EDDF2465345000C16A33 = {
 			isa = PBXGroup;
 			children = (
@@ -207,14 +220,9 @@
 		FBB0EE1C2465369100C16A33 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FB6365DD2468B4A300BC7913 /* Logout */,
 				FBB0EE2B2465A65E00C16A33 /* Chats */,
 				FBB0EE1D2465369900C16A33 /* Login */,
-				FBB0EE67246838C800C16A33 /* LogoutPresenter.swift */,
-				FBB0EE68246838C800C16A33 /* LogoutWorker.swift */,
-				FBB0EE69246838C800C16A33 /* LogoutRouter.swift */,
-				FBB0EE6A246838C800C16A33 /* LogoutModels.swift */,
-				FBB0EE6B246838C800C16A33 /* LogoutViewController.swift */,
-				FBB0EE6C246838C800C16A33 /* LogoutInteractor.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

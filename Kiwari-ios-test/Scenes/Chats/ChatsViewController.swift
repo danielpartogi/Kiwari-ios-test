@@ -16,7 +16,8 @@ import GrowingTextView
 protocol ChatsDisplayLogic: class
 {
     func displayChat(viewModel: Chats.ChatModel.ViewModel)
-    func diplayListenerChat(viewModel: Chats.ListenChat.ViewModel)
+    func displayListenerChat(viewModel: Chats.ListenChat.ViewModel)
+    func displayAddChatResponse(viewModel: Chats.AddChat.ViewModel)
 }
 
 class ChatsViewController: UIViewController
@@ -76,6 +77,10 @@ class ChatsViewController: UIViewController
     
     // MARK: View lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -102,7 +107,7 @@ class ChatsViewController: UIViewController
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         let thickness: CGFloat = 0.8
         let topBorder = CALayer()
@@ -110,7 +115,7 @@ class ChatsViewController: UIViewController
         topBorder.backgroundColor = UIColor.lightGray.cgColor
         messageView.layer.addSublayer(topBorder)
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHideNotification))
         
         view.addGestureRecognizer(tap)
     }
@@ -126,7 +131,7 @@ class ChatsViewController: UIViewController
     // MARK: Handling Keyboard
     
     @objc private func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if self.bottomMessage.constant == 0 {
                 UIView.animate(withDuration: 2) {
                     self.bottomMessage.constant += keyboardSize.height
@@ -135,13 +140,17 @@ class ChatsViewController: UIViewController
                 
             }
             if chatTable.contentOffset.y >= (chatTable.contentSize.height - chatTable.frame.size.height - keyboardSize.height) {
-                chatTable.scrollToRow(at: IndexPath(row: 4, section: 0), at: .bottom, animated: false)
+            scrollToBottom()
             }
             
         }
     }
     
-    @objc private func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHideNotification(notification: NSNotification) {
+        self.keyboardWillHide()
+    }
+    
+    func keyboardWillHide() {
         view.endEditing(true)
         if self.bottomMessage.constant != 0 {
             UIView.animate(withDuration: 2) {
@@ -149,16 +158,24 @@ class ChatsViewController: UIViewController
                 self.view.layoutIfNeeded()
             }
         }
-        
     }
     
     @IBAction func sendClicked(_ sender: Any) {
-        
+        guard let user = UserStorage.getUser() else {return}
+        let message = self.message.text
+        if message?.count ?? 0 > 0 {
+            let chat = Chat(name: user.name, email: user.email, avatar: user.avatar, time: Date(), message: message ?? ("") )
+                  interactor?.addChat(request: Chats.AddChat.Request(chat: chat))
+                  self.message.text = ""
+                  keyboardWillHide()
+        }
     }
     
+
     
     
 }
+
 
 extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -171,6 +188,14 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let data = router?.dataStore?.chat else {return cell}
         cell.setup(chat: data[indexPath.row])
         return cell
+        
+    }
+    
+    func scrollToBottom() {
+        guard let chatCounter = router?.dataStore?.chat?.count else {return}
+        if chatCounter > 0 {
+             chatTable.scrollToRow(at: IndexPath(row: chatCounter - 1, section: 0), at: .bottom, animated: false)
+        }
         
     }
 }
@@ -187,11 +212,24 @@ extension ChatsViewController: ChatsDisplayLogic {
     
     func displayChat(viewModel: Chats.ChatModel.ViewModel) {
         chatTable.reloadData()
+        
+        let request = Chats.ListenChat.Request()
+        scrollToBottom()
+        interactor?.listenChat(request: request)
     }
     
-    func diplayListenerChat(viewModel: Chats.ListenChat.ViewModel) {
+    func displayListenerChat(viewModel: Chats.ListenChat.ViewModel) {
         chatTable.beginUpdates()
         chatTable.insertRows(at: [IndexPath(row: (router?.dataStore?.chat?.count ?? 1) - 1, section: 0)], with: .automatic)
         chatTable.endUpdates()
+        scrollToBottom()
+    }
+    
+    func displayAddChatResponse(viewModel: Chats.AddChat.ViewModel) {
+  
+        guard let err = viewModel.err else {
+            return
+        }
+        
     }
 }

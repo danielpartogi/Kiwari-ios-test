@@ -43,6 +43,14 @@
 		FBB0EE602466D54900C16A33 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE5F2466D54900C16A33 /* Enums.swift */; };
 		FBB0EE622466D5C000C16A33 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE612466D5C000C16A33 /* KeychainManager.swift */; };
 		FBB0EE642466DABC00C16A33 /* HardcodedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */; };
+		FBB0EE6D246838C800C16A33 /* LogoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE67246838C800C16A33 /* LogoutPresenter.swift */; };
+		FBB0EE6E246838C800C16A33 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE68246838C800C16A33 /* LogoutWorker.swift */; };
+		FBB0EE6F246838C800C16A33 /* LogoutRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE69246838C800C16A33 /* LogoutRouter.swift */; };
+		FBB0EE70246838C800C16A33 /* LogoutModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE6A246838C800C16A33 /* LogoutModels.swift */; };
+		FBB0EE71246838C800C16A33 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE6B246838C800C16A33 /* LogoutViewController.swift */; };
+		FBB0EE72246838C800C16A33 /* LogoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE6C246838C800C16A33 /* LogoutInteractor.swift */; };
+		FBB0EE7B2468761D00C16A33 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE7A2468761D00C16A33 /* Switcher.swift */; };
+		FBB0EE7D2468A0DE00C16A33 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE7C2468A0DE00C16A33 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +108,14 @@
 		FBB0EE5F2466D54900C16A33 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		FBB0EE612466D5C000C16A33 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedUser.swift; sourceTree = "<group>"; };
+		FBB0EE67246838C800C16A33 /* LogoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPresenter.swift; sourceTree = "<group>"; };
+		FBB0EE68246838C800C16A33 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
+		FBB0EE69246838C800C16A33 /* LogoutRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRouter.swift; sourceTree = "<group>"; };
+		FBB0EE6A246838C800C16A33 /* LogoutModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModels.swift; sourceTree = "<group>"; };
+		FBB0EE6B246838C800C16A33 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		FBB0EE6C246838C800C16A33 /* LogoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutInteractor.swift; sourceTree = "<group>"; };
+		FBB0EE7A2468761D00C16A33 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		FBB0EE7C2468A0DE00C16A33 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +209,12 @@
 			children = (
 				FBB0EE2B2465A65E00C16A33 /* Chats */,
 				FBB0EE1D2465369900C16A33 /* Login */,
+				FBB0EE67246838C800C16A33 /* LogoutPresenter.swift */,
+				FBB0EE68246838C800C16A33 /* LogoutWorker.swift */,
+				FBB0EE69246838C800C16A33 /* LogoutRouter.swift */,
+				FBB0EE6A246838C800C16A33 /* LogoutModels.swift */,
+				FBB0EE6B246838C800C16A33 /* LogoutViewController.swift */,
+				FBB0EE6C246838C800C16A33 /* LogoutInteractor.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -220,6 +242,7 @@
 				FBB0EE5F2466D54900C16A33 /* Enums.swift */,
 				FBB0EE612466D5C000C16A33 /* KeychainManager.swift */,
 				FBB0EE632466DABC00C16A33 /* HardcodedUser.swift */,
+				FBB0EE7A2468761D00C16A33 /* Switcher.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -241,11 +264,11 @@
 		FBB0EE392465B5BD00C16A33 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */,
 				FBB0EE552465ED9500C16A33 /* ChatTableViewCell.swift */,
 				FBB0EE562465ED9500C16A33 /* ChatTableViewCell.xib */,
 				FBB0EE462465C1DE00C16A33 /* NavigationBarChatView.swift */,
 				FBB0EE442465C07000C16A33 /* NavigationBarChat.xib */,
-				FBB0EE532465E6AD00C16A33 /* ChatTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -254,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB0EE492465D5E900C16A33 /* UIImageExtension.swift */,
+				FBB0EE7C2468A0DE00C16A33 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,7 +472,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB0EE472465C1DE00C16A33 /* NavigationBarChatView.swift in Sources */,
+				FBB0EE7D2468A0DE00C16A33 /* DateExtension.swift in Sources */,
 				FBB0EE332465A8FC00C16A33 /* ChatsWorker.swift in Sources */,
+				FBB0EE72246838C800C16A33 /* LogoutInteractor.swift in Sources */,
 				FBB0EE602466D54900C16A33 /* Enums.swift in Sources */,
 				FBB0EE4A2465D5E900C16A33 /* UIImageExtension.swift in Sources */,
 				FBB0EE542465E6AD00C16A33 /* ChatTableView.swift in Sources */,
@@ -460,19 +486,25 @@
 				FBB0EE342465A8FC00C16A33 /* ChatsRouter.swift in Sources */,
 				FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */,
 				FBB0EE642466DABC00C16A33 /* HardcodedUser.swift in Sources */,
+				FBB0EE70246838C800C16A33 /* LogoutModels.swift in Sources */,
+				FBB0EE71246838C800C16A33 /* LogoutViewController.swift in Sources */,
+				FBB0EE7B2468761D00C16A33 /* Switcher.swift in Sources */,
 				FBB0EE362465A8FC00C16A33 /* ChatsViewController.swift in Sources */,
 				FBB0EE622466D5C000C16A33 /* KeychainManager.swift in Sources */,
 				FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */,
 				FBB0EE372465A8FC00C16A33 /* ChatsInteractor.swift in Sources */,
 				FBB0EE16246535E000C16A33 /* LoginPresenter.swift in Sources */,
+				FBB0EE6F246838C800C16A33 /* LogoutRouter.swift in Sources */,
 				FBB0EE18246535E000C16A33 /* LoginRouter.swift in Sources */,
 				FBB0EE4E2465DBDF00C16A33 /* Chat.swift in Sources */,
 				FBB0EE352465A8FC00C16A33 /* ChatsModels.swift in Sources */,
+				FBB0EE6E246838C800C16A33 /* LogoutWorker.swift in Sources */,
 				FBB0EE5C2466D2FD00C16A33 /* AppState.swift in Sources */,
 				FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */,
 				FBB0EE17246535E000C16A33 /* LoginWorker.swift in Sources */,
 				FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */,
 				FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */,
+				FBB0EE6D246838C800C16A33 /* LogoutPresenter.swift in Sources */,
 				FBB0EE222465370500C16A33 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

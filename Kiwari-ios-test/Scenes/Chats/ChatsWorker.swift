@@ -53,4 +53,12 @@ class ChatsWorker
             
         }
     }
+    
+    func addChat(req: Chats.AddChat.Request, completion: @escaping (_ error: Error?) -> ()) {
+        
+        FirebaseConstans.refs.databaseChats.addDocument(data: req.chat.getDictionaryData() as [String : Any]){
+            err in
+            completion(err)
+        }
+    }
 }

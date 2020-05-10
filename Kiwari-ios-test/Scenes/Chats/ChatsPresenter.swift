@@ -16,6 +16,7 @@ protocol ChatsPresentationLogic
 {
     func presentChat(response: Chats.ChatModel.Response)
     func presentListenerChat(response: Chats.ListenChat.Response)
+    func presentAddChat(response: Chats.AddChat.Response)
 }
 
 class ChatsPresenter: ChatsPresentationLogic
@@ -30,6 +31,10 @@ class ChatsPresenter: ChatsPresentationLogic
     }
     
     func presentListenerChat(response: Chats.ListenChat.Response) {
-        
+        viewController?.displayListenerChat(viewModel: Chats.ListenChat.ViewModel(chat: response.chat))
+    }
+    
+    func presentAddChat(response: Chats.AddChat.Response) {
+        viewController?.displayAddChatResponse(viewModel: Chats.AddChat.ViewModel(err: response.err))
     }
 }

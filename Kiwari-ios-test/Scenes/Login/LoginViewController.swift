@@ -78,11 +78,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     
         override func viewWillAppear(_ animated: Bool) {
-            self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
-            if AppState.sharedInstance.isLoggedIn() {
-                performSegue(withIdentifier: "Chats", sender: nil)
-            }
         }
     
     override func viewDidLoad()
@@ -93,7 +88,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         setupData()
     }
     
+  
+    
     override func viewWillDisappear(_ animated: Bool) {
+        
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -155,15 +153,21 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         }
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+            
+    }
+    
     @IBAction func loginButton(_ sender: Any) {
-        
+
         guard let userItem = user else {return}
         
         if userItem[0].email == email.text && userItem[0].password == password.text {
             AppState.sharedInstance.setupAuthorizedState(user: userItem[0])
             performSegue(withIdentifier: "Chats", sender: nil)
+//            Switcher.updateRootVC()
         } else if userItem[1].email == email.text && userItem[1].password == password.text {
             AppState.sharedInstance.setupAuthorizedState(user: userItem[1])
+            //Switcher.updateRootVC()
             performSegue(withIdentifier: "Chats", sender: nil)
         }
         

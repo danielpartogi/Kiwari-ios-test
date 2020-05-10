@@ -44,4 +44,16 @@ enum Chats
             var chat: Chat
         }
     }
+    
+    enum AddChat {
+        struct Request {
+            var chat: Chat
+        }
+        struct Response {
+            var err: Error?
+        }
+        struct ViewModel {
+            var err: Error?
+        }
+    }
 }

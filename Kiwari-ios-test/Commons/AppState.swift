@@ -6,6 +6,7 @@
 //  Copyright © 2020 Daniel. All rights reserved.
 //
 import Foundation
+import UIKit
 
 class AppState: NSObject {
   

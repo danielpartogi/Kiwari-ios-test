@@ -13,6 +13,7 @@ class ChatTableViewCell: UITableViewCell {
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var chatTableView: ChatTableView!
+    @IBOutlet weak var dateTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +32,7 @@ class ChatTableViewCell: UITableViewCell {
     func setup(chat: Chat) {
         message.text = chat.message
         chatTableView.currentUserIsSender = chat.email == UserStorage.getUser()?.email
-        
+        dateTime.text = chat.time?.toStringFormat(.dayMonthYear)
     }
     
     

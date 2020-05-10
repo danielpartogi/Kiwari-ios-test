@@ -11,23 +11,16 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
-    
+
+    private(set) static var shared: SceneDelegate?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        if AppState.sharedInstance.isLoggedIn() {
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "ChatsViewController") as? ChatsViewController
-            if let vc = viewController {
-                self.window?.rootViewController = vc
-            }
-            UserStorage.saveFireListener(state: false)
-        }
-        
-        
         guard let _ = (scene as? UIWindowScene) else { return }
+        Self.shared = self
+        Switcher.updateRootVC()
+    
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -9,10 +9,18 @@
          contextName = "GrowingTextView.forceLayoutSubviews():GrowingTextView.swift">
       </ContextState>
       <ContextState
-         contextName = "main:AppDelegate.swift">
+         contextName = "ChatsViewController.viewWillAppear(_:):ChatsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "ChatsViewController.tableView(_:cellForRowAt:):ChatsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ChatsViewController.displayChat(viewModel:):ChatsViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in ChatsInteractor.fetchChat(request:):ChatsInteractor.swift">
@@ -21,16 +29,30 @@
          contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
       </ContextState>
       <ContextState
+         contextName = "LogoutViewController.logoutTouched(_:):LogoutViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ChatsViewController.keyboardWillShow(notification:):ChatsViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "chatTable.contentSize.height">
+            </PersistentString>
+            <PersistentString
                value = "chatTable.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "router?.dataStore?.chat?.count ?? 1 ">
             </PersistentString>
             <PersistentString
                value = "chatTable.contentOffset.y">
             </PersistentString>
             <PersistentString
-               value = "chatTable.contentSize.height">
+               value = "router?.dataStore?.chat?.count ?? 1 - 1">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

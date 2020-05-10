@@ -17,13 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LE5-d3-B93" customClass="ChatTableView" customModule="Kiwari_ios_test" customModuleProvider="target">
-                        <rect key="frame" x="16" y="16" width="288" height="68"/>
+                        <rect key="frame" x="16" y="8" width="288" height="84"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5N-xh-Qqy">
-                                <rect key="frame" x="16" y="16" width="256" height="36"/>
+                                <rect key="frame" x="16" y="24" width="256" height="44"/>
                                 <string key="text">Label adjasodja asdajdoa apjsdojadja pajdajda asdajsdopajdpa eajoajwdjaodwa adjasojdoajd adoaijsdoajoj adoajdsoiajd haodhaodihaohosda</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zss-cf-Vvh">
+                                <rect key="frame" x="249" y="8" width="31" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.45899999139999997" green="0.45899999139999997" blue="0.45899999139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -31,24 +37,27 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="M5N-xh-Qqy" secondAttribute="bottom" constant="16" id="ALJ-wG-FBL"/>
                             <constraint firstAttribute="trailing" secondItem="M5N-xh-Qqy" secondAttribute="trailing" constant="16" id="PSG-97-DWK"/>
+                            <constraint firstAttribute="trailing" secondItem="zss-cf-Vvh" secondAttribute="trailing" constant="8" id="Sd2-Wc-cXI"/>
                             <constraint firstItem="M5N-xh-Qqy" firstAttribute="leading" secondItem="LE5-d3-B93" secondAttribute="leading" constant="16" id="WhC-b0-93Z"/>
-                            <constraint firstItem="M5N-xh-Qqy" firstAttribute="top" secondItem="LE5-d3-B93" secondAttribute="top" constant="16" id="peV-jB-T1S"/>
+                            <constraint firstItem="zss-cf-Vvh" firstAttribute="top" secondItem="LE5-d3-B93" secondAttribute="top" constant="8" id="oqv-Yu-jmf"/>
+                            <constraint firstItem="M5N-xh-Qqy" firstAttribute="top" secondItem="LE5-d3-B93" secondAttribute="top" constant="24" id="peV-jB-T1S"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LE5-d3-B93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="1JF-VB-sir"/>
-                    <constraint firstItem="LE5-d3-B93" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3N9-TH-sIw"/>
-                    <constraint firstAttribute="bottom" secondItem="LE5-d3-B93" secondAttribute="bottom" constant="16" id="9Ve-YX-Oyb"/>
+                    <constraint firstItem="LE5-d3-B93" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3N9-TH-sIw"/>
+                    <constraint firstAttribute="bottom" secondItem="LE5-d3-B93" secondAttribute="bottom" constant="8" id="9Ve-YX-Oyb"/>
                     <constraint firstAttribute="trailing" secondItem="LE5-d3-B93" secondAttribute="trailing" constant="16" id="tnH-HQ-tjz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="chatTableView" destination="LE5-d3-B93" id="5SU-7V-1Ro"/>
+                <outlet property="dateTime" destination="zss-cf-Vvh" id="dYt-xx-L8u"/>
                 <outlet property="message" destination="M5N-xh-Qqy" id="CVr-oW-eJE"/>
             </connections>
-            <point key="canvasLocation" x="139" y="96"/>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
         </tableViewCell>
     </objects>
 </document>

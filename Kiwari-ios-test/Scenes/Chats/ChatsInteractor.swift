@@ -16,6 +16,7 @@ protocol ChatsBusinessLogic
 {
     func fetchChat(request :Chats.ChatModel.Request)
     func listenChat(request: Chats.ListenChat.Request)
+    func addChat(request: Chats.AddChat.Request)
 }
 
 protocol ChatsDataStore
@@ -41,6 +42,13 @@ class ChatsInteractor: ChatsBusinessLogic, ChatsDataStore
         worker.changeListener { data in
             guard let chat = data else {return}
             self.chat?.append(chat)
+            self.presenter?.presentListenerChat(response: Chats.ListenChat.Response(chat: chat))
+        }
+    }
+    
+    func addChat(request: Chats.AddChat.Request) {
+        worker.addChat(req: request) { err in
+            print(err)
         }
     }
 }

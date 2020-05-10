@@ -130,6 +130,14 @@
                                     <constraint firstAttribute="height" constant="70" id="TQE-0W-bic"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pje-7w-Qez">
+                                <rect key="frame" x="0.0" y="120" width="320" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vOD-Ao-nb7" id="aQi-TN-oac"/>
+                                    <outlet property="delegate" destination="vOD-Ao-nb7" id="ZXR-4a-5Lx"/>
+                                </connections>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LF-RU-S6h">
                                 <rect key="frame" x="0.0" y="520" width="320" height="48"/>
                                 <subviews>
@@ -175,14 +183,6 @@
                                     <constraint firstItem="3ga-cD-eTX" firstAttribute="bottom" secondItem="TE2-K8-JBp" secondAttribute="bottom" id="gM0-yy-XFw"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pje-7w-Qez">
-                                <rect key="frame" x="0.0" y="120" width="320" height="400"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vOD-Ao-nb7" id="aQi-TN-oac"/>
-                                    <outlet property="delegate" destination="vOD-Ao-nb7" id="ZXR-4a-5Lx"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

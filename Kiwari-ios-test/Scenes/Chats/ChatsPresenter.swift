@@ -15,6 +15,7 @@ import UIKit
 protocol ChatsPresentationLogic
 {
     func presentChat(response: Chats.ChatModel.Response)
+    func presentListenerChat(response: Chats.ListenChat.Response)
 }
 
 class ChatsPresenter: ChatsPresentationLogic
@@ -23,6 +24,12 @@ class ChatsPresenter: ChatsPresentationLogic
     
     // MARK: Present Chat
     func presentChat(response: Chats.ChatModel.Response) {
+        viewController?.displayChat(viewModel: Chats.ChatModel.ViewModel(
+            chat: response.chat
+        ))
+    }
+    
+    func presentListenerChat(response: Chats.ListenChat.Response) {
         
     }
 }

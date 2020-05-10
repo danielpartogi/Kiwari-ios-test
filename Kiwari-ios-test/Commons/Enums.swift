@@ -12,3 +12,6 @@ enum LocalStorageKey: String {
     case userProfile
     case fireListener
 }
+enum DateFormat: String {
+  case dayMonthYear = "EEEE, dd MMMM yyyy"
+}

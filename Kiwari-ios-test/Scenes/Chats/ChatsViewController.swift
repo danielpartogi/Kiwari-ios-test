@@ -16,6 +16,7 @@ import GrowingTextView
 protocol ChatsDisplayLogic: class
 {
     func displayChat(viewModel: Chats.ChatModel.ViewModel)
+    func diplayListenerChat(viewModel: Chats.ListenChat.ViewModel)
 }
 
 class ChatsViewController: UIViewController
@@ -114,7 +115,7 @@ class ChatsViewController: UIViewController
         view.addGestureRecognizer(tap)
     }
     
-    // MARK: Fetch The Chats
+    // MARK: Do something
     
     func fetchChats()
     {
@@ -131,7 +132,12 @@ class ChatsViewController: UIViewController
                     self.bottomMessage.constant += keyboardSize.height
                     self.view.layoutIfNeeded()
                 }
+                
             }
+            if chatTable.contentOffset.y >= (chatTable.contentSize.height - chatTable.frame.size.height - keyboardSize.height) {
+                chatTable.scrollToRow(at: IndexPath(row: 4, section: 0), at: .bottom, animated: false)
+            }
+            
         }
     }
     
@@ -156,12 +162,14 @@ class ChatsViewController: UIViewController
 
 extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        router?.dataStore?.chat?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.chatTable.dequeueReusableCell(withIdentifier: "ChatTableViewCell") as! ChatTableViewCell
         
+        guard let data = router?.dataStore?.chat else {return cell}
+        cell.setup(chat: data[indexPath.row])
         return cell
         
     }
@@ -178,6 +186,12 @@ extension ChatsViewController: ChatsDisplayLogic {
     // MARK: Display Chat
     
     func displayChat(viewModel: Chats.ChatModel.ViewModel) {
-        
+        chatTable.reloadData()
+    }
+    
+    func diplayListenerChat(viewModel: Chats.ListenChat.ViewModel) {
+        chatTable.beginUpdates()
+        chatTable.insertRows(at: [IndexPath(row: (router?.dataStore?.chat?.count ?? 1) - 1, section: 0)], with: .automatic)
+        chatTable.endUpdates()
     }
 }

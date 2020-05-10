@@ -28,13 +28,14 @@ class ChatTableView: UIView {
             bezierPath.move(to: CGPoint(x: rect.maxX - 25.0, y: rect.maxY - 10.0))
             bezierPath.addLine(to: CGPoint(x: rect.maxX - 10.0, y: rect.maxY))
             bezierPath.addLine(to: CGPoint(x: rect.maxX - 10.0, y: rect.maxY - 10.0))
+            UIColor.green.withAlphaComponent(0.5).setFill()
         } else {
             bezierPath.move(to: CGPoint(x: rect.minX + 25.0, y: rect.maxY - 10.0))
             bezierPath.addLine(to: CGPoint(x: rect.minX + 10.0, y: rect.maxY))
             bezierPath.addLine(to: CGPoint(x: rect.minX + 10.0, y: rect.maxY - 10.0))
+            UIColor.lightGray.withAlphaComponent(0.5).setFill()
         }
         
-        UIColor.lightGray.withAlphaComponent(0.5).setFill()
         bezierPath.fill()
         bezierPath.close()
     }

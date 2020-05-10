@@ -9,30 +9,26 @@
 import Foundation
 
 
-protocol User {
-    var name: String {get}
-    var avatar : String {get}
-    var email : String {get}
-    var password: String {get}
-}
-
-struct User1 : User {
-    var name: String = "Jarjit Singh"
+struct User: Codable {
+    var name: String
     
-    var avatar: String = "https://api.adorable.io/avatars/160/jarjit@mail.com.png"
+    var avatar: String
     
-    var email: String = "jarjit@mail.com"
+    var email: String
     
-    var password: String = "123456"
-}
-
-struct User2 : User {
-    var name: String = "Ismail bin Mail"
+    var password: String
     
-    var avatar: String = "https://api.adorable.io/avatars/160/ismail@mail.com.png"
-    
-    var email: String = "ismail@mail.com"
-    
-    var password: String = "123456"
-    
+    init(isFirstUser: Bool) {
+        if isFirstUser {
+            name = "Jarjit Singh"
+            avatar = "https://api.adorable.io/avatars/160/jarjit@mail.com.png"
+            email = "jarjit@mail.com"
+            password = "123456"
+        } else {
+            name = "Ismail bin Mail"
+            avatar = "https://api.adorable.io/avatars/160/ismail@mail.com.png"
+            email = "ismail@mail.com"
+            password = "123456"
+        }
+    }
 }

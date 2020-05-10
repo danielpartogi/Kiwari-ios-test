@@ -45,6 +45,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="chatTableView" destination="LE5-d3-B93" id="5SU-7V-1Ro"/>
                 <outlet property="message" destination="M5N-xh-Qqy" id="CVr-oW-eJE"/>
             </connections>
             <point key="canvasLocation" x="139" y="96"/>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ChatsInteractor.fetchChat(request:):ChatsInteractor.swift">
+      </ContextState>
+      <ContextState
+         contextName = "GrowingTextView.forceLayoutSubviews():GrowingTextView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "main:AppDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ChatsViewController.tableView(_:cellForRowAt:):ChatsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ChatsInteractor.fetchChat(request:):ChatsInteractor.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ChatsViewController.keyboardWillShow(notification:):ChatsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "chatTable.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "chatTable.contentOffset.y">
+            </PersistentString>
+            <PersistentString
+               value = "chatTable.contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

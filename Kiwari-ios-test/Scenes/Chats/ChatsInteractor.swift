@@ -15,23 +15,32 @@ import UIKit
 protocol ChatsBusinessLogic
 {
     func fetchChat(request :Chats.ChatModel.Request)
+    func listenChat(request: Chats.ListenChat.Request)
 }
 
 protocol ChatsDataStore
 {
-    
+    var chat: [Chat]? {get set}
 }
 
 class ChatsInteractor: ChatsBusinessLogic, ChatsDataStore
 {
   
-    
     var presenter: ChatsPresentationLogic?
+    var chat: [Chat]?
     var worker: ChatsWorker = ChatsWorker()
     
     func fetchChat(request: Chats.ChatModel.Request) {
         worker.getCollection { data in
+            self.chat = data
             self.presenter?.presentChat(response: Chats.ChatModel.Response(chat: data))
         }
       }
+    
+    func listenChat(request: Chats.ListenChat.Request) {
+        worker.changeListener { data in
+            guard let chat = data else {return}
+            self.chat?.append(chat)
+        }
+    }
 }

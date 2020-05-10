@@ -12,6 +12,7 @@ class ChatTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var chatTableView: ChatTableView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,12 @@ class ChatTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        
+    }
+    
+    func setup(chat: Chat) {
+        message.text = chat.message
+        chatTableView.currentUserIsSender = chat.email == UserStorage.getUser()?.email
         
     }
     

@@ -27,10 +27,21 @@ enum Chats
         }
         
         struct ViewModel {
-            var name: String
-            var date: String
-            var time: String
-            var avatar: URL
+            var chat: [Chat] 
+        }
+    }
+    
+    enum ListenChat {
+        struct Request {
+            
+        }
+        
+        struct Response {
+            var chat: Chat
+        }
+        
+        struct ViewModel {
+            var chat: Chat
         }
     }
 }

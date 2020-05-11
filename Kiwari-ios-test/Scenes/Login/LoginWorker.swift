@@ -12,26 +12,35 @@
 
 import UIKit
 
+struct MYError : Error {
+    let description : String
+    let domain : String
+    
+    var localizedDescription: String {
+        return NSLocalizedString(description, comment: "")
+    }
+}
+
 class LoginWorker
 {
     
-    func checkUser(request:Login.LoginUser.Request, completion: @escaping (_ valid: Bool)->()) {
+    func checkUser(request:Login.LoginUser.Request, completion: @escaping (_ result: Result<Bool, Error>) -> ()) {
         DispatchQueue.global(qos: .background).async {
             let userItem = Hardcodeduser.setHardcodedUser()
             
             if userItem[0].email == request.email && userItem[0].password == request.password {
                 AppState.sharedInstance.setupAuthorizedState(user: userItem[0])
                 DispatchQueue.main.async {
-                    completion(true)
+                    completion(.success(true))
                 }
             } else if userItem[1].email == request.email && userItem[1].password == request.password {
                 AppState.sharedInstance.setupAuthorizedState(user: userItem[1])
-               DispatchQueue.main.async {
-                    completion(true)
+                DispatchQueue.main.async {
+                    completion(.success(true))
                 }
             } else {
-              DispatchQueue.main.async {
-                    completion(false)
+                DispatchQueue.main.async {
+                    completion(.failure(MYError(description: "login Not Valid", domain: "Kiwari")))
                 }
             }
             

@@ -29,8 +29,8 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     //var name: String = ""
     
     func isUserValid(email: String?, password: String?) {
-        worker.checkUser(request: Login.LoginUser.Request(email: email, password: password)) { (isValid) in
-            self.presenter?.presentLoginUser(res: Login.LoginUser.Response(isValid: isValid, error: nil))
+        worker.checkUser(request: Login.LoginUser.Request(email: email, password: password)) { (data) in
+            self.presenter?.presentLoginUser(res: Login.LoginUser.Response(data: data))
         }
     }
     

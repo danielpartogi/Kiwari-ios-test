@@ -25,13 +25,11 @@ enum Login
     }
     struct Response
     {
-        var isValid: Bool
-        var error: Error?
+        var data: Result<Bool, Error>
     }
     struct ViewModel
     {
-        var isValid: Bool
-        var error: Error?
+        var data: Result<Bool, Error>
     }
   }
 }

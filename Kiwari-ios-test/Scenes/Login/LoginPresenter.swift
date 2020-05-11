@@ -24,6 +24,6 @@ class LoginPresenter: LoginPresentationLogic
   // MARK: Do something
   
     func presentLoginUser(res: Login.LoginUser.Response) {
-        viewController?.displayLoginUser(vm: Login.LoginUser.ViewModel(isValid: res.isValid, error: res.error))
+        viewController?.displayLoginUser(vm: Login.LoginUser.ViewModel(data: res.data))
     }
 }

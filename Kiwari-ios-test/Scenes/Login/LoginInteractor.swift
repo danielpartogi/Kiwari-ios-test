@@ -14,7 +14,7 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-    func doSomething(request: Login.Something.Request)
+    func isUserValid(email: String?, password: String?)
 }
 
 protocol LoginDataStore
@@ -25,17 +25,13 @@ protocol LoginDataStore
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
     var presenter: LoginPresentationLogic?
-    var worker: LoginWorker?
+    var worker = LoginWorker()
     //var name: String = ""
     
-    // MARK: Do something
-    
-    func doSomething(request: Login.Something.Request)
-    {
-        worker = LoginWorker()
-        worker?.doSomeWork()
-        
-        let response = Login.Something.Response()
-        presenter?.presentSomething(response: response)
+    func isUserValid(email: String?, password: String?) {
+        worker.checkUser(request: Login.LoginUser.Request(email: email, password: password)) { (isValid) in
+            self.presenter?.presentLoginUser(res: Login.LoginUser.Response(isValid: isValid, error: nil))
+        }
     }
+    
 }

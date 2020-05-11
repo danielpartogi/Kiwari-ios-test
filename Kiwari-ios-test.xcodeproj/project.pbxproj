@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		029538657ECEF07AABEAB450 /* Pods_Kiwari_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213D06B41BCCEE9D5FACF27 /* Pods_Kiwari_ios_test.framework */; };
 		717A7174AC566FF46E42EDB8 /* Pods_Kiwari_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */; };
+		FB6365E1246932EB00BC7913 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */; };
 		FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDEB2465345000C16A33 /* AppDelegate.swift */; };
 		FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDED2465345000C16A33 /* SceneDelegate.swift */; };
 		FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EDF12465345000C16A33 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwari_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B686404202A803412C062E6 /* Pods-Kiwari-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		96002AF072D3D3CC4A9194A0 /* Pods-Kiwari-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.release.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.release.xcconfig"; sourceTree = "<group>"; };
+		FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBB0EDE82465345000C16A33 /* Kiwari-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kiwari-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0EDEB2465345000C16A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB0EDED2465345000C16A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		FBB0EDEA2465345000C16A33 /* Kiwari-ios-test */ = {
 			isa = PBXGroup;
 			children = (
+				FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */,
 				FBB0EE20246536E800C16A33 /* Commons */,
 				FBB0EE1C2465369100C16A33 /* Scenes */,
 				FBB0EDEB2465345000C16A33 /* AppDelegate.swift */,
@@ -398,6 +401,7 @@
 				FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */,
 				FBB0EDF82465345500C16A33 /* Assets.xcassets in Resources */,
 				FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */,
+				FB6365E1246932EB00BC7913 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

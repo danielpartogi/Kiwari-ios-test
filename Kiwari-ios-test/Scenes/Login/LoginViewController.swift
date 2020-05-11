@@ -15,10 +15,10 @@ import Firebase
 
 protocol LoginDisplayLogic: class
 {
-    func displaySomething(viewModel: Login.Something.ViewModel)
+    func displayLoginUser(vm: Login.LoginUser.ViewModel)
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic
+class LoginViewController: UIViewController
 {
     var interactor: LoginBusinessLogic?
     var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var bottomLoginConstrain: NSLayoutConstraint!
     
-    var user: [User]?
+  
     
     
     // MARK: Setup
@@ -85,7 +85,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         super.viewDidLoad()
         
         setupView()
-        setupData()
     }
     
   
@@ -107,26 +106,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         view.addGestureRecognizer(tap)
         
     }
-    
-    private func setupData() {
-        user = Hardcodeduser.setHardcodedUser()
-    }
-    
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething()
-    {
-        let request = Login.Something.Request()
-        interactor?.doSomething(request: request)
-        
-    }
-    
-    func displaySomething(viewModel: Login.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
-    }
+
     
     // MARK: Handling Keyboard
     
@@ -158,21 +138,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     }
     
     @IBAction func loginButton(_ sender: Any) {
-
-        guard let userItem = user else {return}
-        
-        if userItem[0].email == email.text && userItem[0].password == password.text {
-            AppState.sharedInstance.setupAuthorizedState(user: userItem[0])
-            performSegue(withIdentifier: "Chats", sender: nil)
-//            Switcher.updateRootVC()
-        } else if userItem[1].email == email.text && userItem[1].password == password.text {
-            AppState.sharedInstance.setupAuthorizedState(user: userItem[1])
-            //Switcher.updateRootVC()
-            performSegue(withIdentifier: "Chats", sender: nil)
-        }
-        
+        interactor?.isUserValid(email: email.text, password: password.text)
     }
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -187,5 +154,14 @@ extension LoginViewController: UITextFieldDelegate {
             password.becomeFirstResponder()
         }
         return false
+    }
+}
+
+extension LoginViewController: LoginDisplayLogic {
+    
+    func displayLoginUser(vm: Login.LoginUser.ViewModel) {
+        if vm.isValid {
+            performSegue(withIdentifier: "Chats", sender: nil)
+        }
     }
 }

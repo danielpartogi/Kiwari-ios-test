@@ -12,15 +12,6 @@
 
 import UIKit
 
-struct MYError : Error {
-    let description : String
-    let domain : String
-    
-    var localizedDescription: String {
-        return NSLocalizedString(description, comment: "")
-    }
-}
-
 class LoginWorker
 {
     
@@ -40,7 +31,7 @@ class LoginWorker
                 }
             } else {
                 DispatchQueue.main.async {
-                    completion(.failure(MYError(description: "login Not Valid", domain: "Kiwari")))
+                    completion(.failure(ErrorHandler(description: "login Not Valid", domain: "Kiwari")))
                 }
             }
             

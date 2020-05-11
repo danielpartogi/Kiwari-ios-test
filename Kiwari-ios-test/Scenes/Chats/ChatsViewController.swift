@@ -226,10 +226,10 @@ extension ChatsViewController: ChatsDisplayLogic {
     }
     
     func displayAddChatResponse(viewModel: Chats.AddChat.ViewModel) {
-  
-        guard let err = viewModel.err else {
-            return
+        switch viewModel.data {
+        case .failure(let err as ErrorHandler): self.popupAlert(title: err.domain, message: err.description, actionTitles: ["OK"], actions: [nil])
+        default:
+            print("success")
         }
-        
     }
 }

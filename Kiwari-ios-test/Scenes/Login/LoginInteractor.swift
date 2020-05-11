@@ -26,7 +26,6 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
     var presenter: LoginPresentationLogic?
     var worker = LoginWorker()
-    //var name: String = ""
     
     func isUserValid(email: String?, password: String?) {
         worker.checkUser(request: Login.LoginUser.Request(email: email, password: password)) { (data) in

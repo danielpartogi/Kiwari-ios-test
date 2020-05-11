@@ -23,11 +23,11 @@ enum Chats
         }
         
         struct Response {
-            var chat: [Chat]
+            var data: Result<[Chat],Error>
         }
         
         struct ViewModel {
-            var chat: [Chat] 
+            var data:  Result<[Chat],Error>
         }
     }
     
@@ -37,11 +37,11 @@ enum Chats
         }
         
         struct Response {
-            var chat: Chat
+            var data:  Result<Chat,Error>
         }
         
         struct ViewModel {
-            var chat: Chat
+            var data: Result<Chat,Error>
         }
     }
     
@@ -50,10 +50,10 @@ enum Chats
             var chat: Chat
         }
         struct Response {
-            var err: Error?
+            var data: Result<Bool,Error>
         }
         struct ViewModel {
-            var err: Error?
+            var data: Result<Bool,Error>
         }
     }
 }

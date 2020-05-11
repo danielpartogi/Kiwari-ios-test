@@ -14,7 +14,7 @@ import UIKit
 
 class ChatsWorker
 {
-    func changeListener(completion: @escaping (_ chat: Chat?) -> ()) {
+    func changeListener(completion: @escaping (_ data: Result<Chat, Error>) -> ()) {
         FirebaseConstans.refs.databaseChats.order(by: "time", descending: false).addSnapshotListener { documentSnapshot, error in
             if let snapshot = documentSnapshot {
                 for dc in snapshot.documentChanges {
@@ -23,7 +23,7 @@ class ChatsWorker
                         let chat = Chat(doc: dc.document.data())
                         if AppState.sharedInstance.isFirstListener() {
                              print(dc.document.data())
-                            completion(chat)
+                            completion(.success(chat))
                         }
                         
                     case .modified: break
@@ -38,27 +38,28 @@ class ChatsWorker
         }
     }
     
-    func getCollection(completion: @escaping (_ chats: [Chat]) -> ()) {
+    func getCollection(completion: @escaping (_ data: Result<[Chat], Error>) -> ()) {
         FirebaseConstans.refs.databaseChats.order(by: "time", descending:  false).getDocuments{ query, err in
             if let err = err {
-                   print("Error getting documents: \(err)")
+                completion(.failure(err))
                } else {
                 var data = [Chat]()
                    for document in query!.documents {
                     let chat = Chat(doc: document.data())
                     data.append(chat)
                    }
-                completion(data)
+                completion(.success(data))
                }
             
         }
     }
     
-    func addChat(req: Chats.AddChat.Request, completion: @escaping (_ error: Error?) -> ()) {
+    func addChat(req: Chats.AddChat.Request, completion: @escaping (_ error: Result<Bool, Error>) -> ()) {
         
         FirebaseConstans.refs.databaseChats.addDocument(data: req.chat.getDictionaryData() as [String : Any]){
             err in
-            completion(err)
+            guard let error = err else {return completion(.success(true))}
+            completion(.failure(error))
         }
     }
 }

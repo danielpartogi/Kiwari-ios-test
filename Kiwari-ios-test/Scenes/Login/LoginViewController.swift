@@ -76,14 +76,9 @@ class LoginViewController: UIViewController
     
     // MARK: View lifecycle
     
-    
-        override func viewWillAppear(_ animated: Bool) {
-        }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         setupView()
     }
     
@@ -133,6 +128,7 @@ class LoginViewController: UIViewController
         }
     }
     
+    // MARK: unwind from anywhere
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
             
     }
@@ -141,24 +137,9 @@ class LoginViewController: UIViewController
         interactor?.isUserValid(email: email.text, password: password.text)
     }
     
+    
     func displayLoginAlertDialog(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-              switch action.style{
-              case .default:
-                    print("default")
-
-              case .cancel:
-                    print("cancel")
-
-              case .destructive:
-                    print("destructive")
-
-
-              @unknown default:
-                print("unknown")
-            }}))
-        self.present(alert, animated: true, completion: nil)
+     self.popupAlert(title: title, message: message, actionTitles: ["OK"], actions:[nil])
     }
 }
 
@@ -177,11 +158,13 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+
+// MARK: Login Display Logic
 extension LoginViewController: LoginDisplayLogic {
     
     func displayLoginUser(vm: Login.LoginUser.ViewModel) {
         switch vm.data {
-        case .failure(let err as MYError):
+        case .failure(let err as ErrorHandler):
             displayLoginAlertDialog(title: err.domain, message: err.description)
         default:
             performSegue(withIdentifier: "Chats", sender: nil)

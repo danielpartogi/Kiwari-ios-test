@@ -26,15 +26,17 @@ class ChatsPresenter: ChatsPresentationLogic
     // MARK: Present Chat
     func presentChat(response: Chats.ChatModel.Response) {
         viewController?.displayChat(viewModel: Chats.ChatModel.ViewModel(
-            chat: response.chat
+            data: response.data
         ))
     }
     
+    // MARK: Listen Change on Chats
     func presentListenerChat(response: Chats.ListenChat.Response) {
-        viewController?.displayListenerChat(viewModel: Chats.ListenChat.ViewModel(chat: response.chat))
+        viewController?.displayListenerChat(viewModel: Chats.ListenChat.ViewModel(data: response.data))
     }
     
+    // MARK: Present The Chat
     func presentAddChat(response: Chats.AddChat.Response) {
-        viewController?.displayAddChatResponse(viewModel: Chats.AddChat.ViewModel(err: response.err))
+        viewController?.displayAddChatResponse(viewModel: Chats.AddChat.ViewModel(data: response.data))
     }
 }

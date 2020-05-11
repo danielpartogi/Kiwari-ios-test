@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		029538657ECEF07AABEAB450 /* Pods_Kiwari_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2213D06B41BCCEE9D5FACF27 /* Pods_Kiwari_ios_test.framework */; };
 		717A7174AC566FF46E42EDB8 /* Pods_Kiwari_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */; };
-		FB6365E1246932EB00BC7913 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */; };
+		FB01D6172469517A00E152BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB01D6162469517A00E152BD /* GoogleService-Info.plist */; };
+		FB6365E524694A2C00BC7913 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6365E424694A2C00BC7913 /* ErrorHandler.swift */; };
+		FB6365E724694C8500BC7913 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6365E624694C8500BC7913 /* UIViewExtension.swift */; };
 		FBB0EDEC2465345000C16A33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDEB2465345000C16A33 /* AppDelegate.swift */; };
 		FBB0EDEE2465345000C16A33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EDED2465345000C16A33 /* SceneDelegate.swift */; };
 		FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EDF12465345000C16A33 /* Main.storyboard */; };
@@ -24,7 +26,6 @@
 		FBB0EE1B246535E000C16A33 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE15246535E000C16A33 /* LoginInteractor.swift */; };
 		FBB0EE222465370500C16A33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE212465370500C16A33 /* User.swift */; };
 		FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE25246548DB00C16A33 /* LoginViewController.swift */; };
-		FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */; };
 		FBB0EE2A24659B0200C16A33 /* FirebaseConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */; };
 		FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2C2465A8FB00C16A33 /* ChatsPresenter.swift */; };
 		FBB0EE332465A8FC00C16A33 /* ChatsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0EE2D2465A8FB00C16A33 /* ChatsWorker.swift */; };
@@ -71,7 +72,9 @@
 		63A0FAB0D5D5415D47497E29 /* Pods_Kiwari_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwari_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B686404202A803412C062E6 /* Pods-Kiwari-ios-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.debug.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
 		96002AF072D3D3CC4A9194A0 /* Pods-Kiwari-ios-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwari-ios-test.release.xcconfig"; path = "Target Support Files/Pods-Kiwari-ios-test/Pods-Kiwari-ios-test.release.xcconfig"; sourceTree = "<group>"; };
-		FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB01D6162469517A00E152BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB6365E424694A2C00BC7913 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		FB6365E624694C8500BC7913 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FBB0EDE82465345000C16A33 /* Kiwari-ios-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kiwari-ios-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0EDEB2465345000C16A33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB0EDED2465345000C16A33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		FBB0EE15246535E000C16A33 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		FBB0EE212465370500C16A33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FBB0EE25246548DB00C16A33 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBB0EE2924659B0200C16A33 /* FirebaseConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstans.swift; sourceTree = "<group>"; };
 		FBB0EE2C2465A8FB00C16A33 /* ChatsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsPresenter.swift; sourceTree = "<group>"; };
 		FBB0EE2D2465A8FB00C16A33 /* ChatsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsWorker.swift; sourceTree = "<group>"; };
@@ -196,7 +198,7 @@
 		FBB0EDEA2465345000C16A33 /* Kiwari-ios-test */ = {
 			isa = PBXGroup;
 			children = (
-				FB6365E0246932EB00BC7913 /* GoogleService-Info.plist */,
+				FB01D6162469517A00E152BD /* GoogleService-Info.plist */,
 				FBB0EE20246536E800C16A33 /* Commons */,
 				FBB0EE1C2465369100C16A33 /* Scenes */,
 				FBB0EDEB2465345000C16A33 /* AppDelegate.swift */,
@@ -206,7 +208,6 @@
 				FBB0EDF92465345500C16A33 /* LaunchScreen.storyboard */,
 				FBB0EDFC2465345500C16A33 /* Info.plist */,
 				FBB0EDF42465345000C16A33 /* Kiwari_ios_test.xcdatamodeld */,
-				FBB0EE2724658C6600C16A33 /* GoogleService-Info.plist */,
 			);
 			path = "Kiwari-ios-test";
 			sourceTree = "<group>";
@@ -289,6 +290,7 @@
 			children = (
 				FBB0EE492465D5E900C16A33 /* UIImageExtension.swift */,
 				FBB0EE7C2468A0DE00C16A33 /* DateExtension.swift */,
+				FB6365E624694C8500BC7913 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +300,7 @@
 			children = (
 				FBB0EE212465370500C16A33 /* User.swift */,
 				FBB0EE4D2465DBDF00C16A33 /* Chat.swift */,
+				FB6365E424694A2C00BC7913 /* ErrorHandler.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,10 +401,9 @@
 				FBB0EE452465C07000C16A33 /* NavigationBarChat.xib in Resources */,
 				FBB0EE582465ED9500C16A33 /* ChatTableViewCell.xib in Resources */,
 				FBB0EDFB2465345500C16A33 /* LaunchScreen.storyboard in Resources */,
-				FBB0EE2824658C6600C16A33 /* GoogleService-Info.plist in Resources */,
 				FBB0EDF82465345500C16A33 /* Assets.xcassets in Resources */,
 				FBB0EDF32465345000C16A33 /* Main.storyboard in Resources */,
-				FB6365E1246932EB00BC7913 /* GoogleService-Info.plist in Resources */,
+				FB01D6172469517A00E152BD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,8 +518,10 @@
 				FBB0EE17246535E000C16A33 /* LoginWorker.swift in Sources */,
 				FBB0EE26246548DB00C16A33 /* LoginViewController.swift in Sources */,
 				FBB0EE322465A8FC00C16A33 /* ChatsPresenter.swift in Sources */,
+				FB6365E524694A2C00BC7913 /* ErrorHandler.swift in Sources */,
 				FBB0EE6D246838C800C16A33 /* LogoutPresenter.swift in Sources */,
 				FBB0EE222465370500C16A33 /* User.swift in Sources */,
+				FB6365E724694C8500BC7913 /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

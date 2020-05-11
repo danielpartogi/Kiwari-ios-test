@@ -55,6 +55,6 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
   
   func passDataToChats(source: LoginDataStore, destination: inout ChatsDataStore)
   {
-    //destination.name = source.name
+    
   }
 }

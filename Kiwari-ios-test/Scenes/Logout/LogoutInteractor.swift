@@ -14,28 +14,28 @@ import UIKit
 
 protocol LogoutBusinessLogic
 {
-  func doSomething(request: Logout.Something.Request)
+    func doSomething(request: Logout.Something.Request)
 }
 
 protocol LogoutDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class LogoutInteractor: LogoutBusinessLogic, LogoutDataStore
 {
-  var presenter: LogoutPresentationLogic?
-  var worker: LogoutWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Logout.Something.Request)
-  {
-    worker = LogoutWorker()
-    worker?.doSomeWork()
+    var presenter: LogoutPresentationLogic?
+    var worker: LogoutWorker?
+    //var name: String = ""
     
-    let response = Logout.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    // MARK: Do something
+    
+    func doSomething(request: Logout.Something.Request)
+    {
+        worker = LogoutWorker()
+        worker?.doSomeWork()
+        
+        let response = Logout.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
 }

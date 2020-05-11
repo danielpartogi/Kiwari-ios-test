@@ -9,31 +9,31 @@ import Foundation
 import UIKit
 
 class AppState: NSObject {
-  
-  static let sharedInstance = AppState()
+    
+    static let sharedInstance = AppState()
     lazy var keychainManager: KeychainManager = {
-       let keychainManager = KeychainManager()
-       return keychainManager
-     }()
-     
-  
-  func setupAuthorizedState(user: User) {
-    UserStorage.saveUser(user: user)
-  }
-  
-  func setupUnauthorizedState() {
-    UserStorage.removeUser()
-  }
-
+        let keychainManager = KeychainManager()
+        return keychainManager
+    }()
+    
+    
+    func setupAuthorizedState(user: User) {
+        UserStorage.saveUser(user: user)
+    }
+    
+    func setupUnauthorizedState() {
+        UserStorage.removeUser()
+    }
+    
     func isFirstListener() -> Bool {
         return UserStorage.getFireListener()
     }
-  
-  func isLoggedIn() -> Bool {
-    var loggedIn = false
-    if let _ = UserStorage.getUser() {
-      loggedIn = true
+    
+    func isLoggedIn() -> Bool {
+        var loggedIn = false
+        if let _ = UserStorage.getUser() {
+            loggedIn = true
+        }
+        return loggedIn
     }
-    return loggedIn
-  }
 }

@@ -13,5 +13,5 @@ enum LocalStorageKey: String {
     case fireListener
 }
 enum DateFormat: String {
-  case dayMonthYear = "EEEE, dd MMMM yyyy (HH:mm:ss)"
+    case dayMonthYear = "EEEE, dd MMMM yyyy (HH:mm:ss)"
 }

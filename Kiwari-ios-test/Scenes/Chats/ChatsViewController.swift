@@ -140,7 +140,7 @@ class ChatsViewController: UIViewController
                 
             }
             if chatTable.contentOffset.y >= (chatTable.contentSize.height - chatTable.frame.size.height - keyboardSize.height) {
-            scrollToBottom()
+                scrollToBottom()
             }
             
         }
@@ -165,13 +165,13 @@ class ChatsViewController: UIViewController
         let message = self.message.text
         if message?.count ?? 0 > 0 {
             let chat = Chat(name: user.name, email: user.email, avatar: user.avatar, time: Date(), message: message ?? ("") )
-                  interactor?.addChat(request: Chats.AddChat.Request(chat: chat))
-                  self.message.text = ""
-                  keyboardWillHide()
+            interactor?.addChat(request: Chats.AddChat.Request(chat: chat))
+            self.message.text = ""
+            keyboardWillHide()
         }
     }
     
-
+    
     
     
 }
@@ -194,7 +194,7 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
     func scrollToBottom() {
         guard let chatCounter = router?.dataStore?.chat?.count else {return}
         if chatCounter > 0 {
-             chatTable.scrollToRow(at: IndexPath(row: chatCounter - 1, section: 0), at: .bottom, animated: false)
+            chatTable.scrollToRow(at: IndexPath(row: chatCounter - 1, section: 0), at: .bottom, animated: false)
         }
         
     }

@@ -14,47 +14,47 @@ import UIKit
 
 @objc protocol LoginRoutingLogic
 {
-  func routeToChats(segue: UIStoryboardSegue?)
+    func routeToChats(segue: UIStoryboardSegue?)
 }
 
 protocol LoginDataPassing
 {
-  var dataStore: LoginDataStore? { get }
+    var dataStore: LoginDataStore? { get }
 }
 
 class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
 {
-  weak var viewController: LoginViewController?
-  var dataStore: LoginDataStore?
-  
-  // MARK: Routing
-  
-  func routeToChats(segue: UIStoryboardSegue?)
-  {
-    if let segue = segue {
-      let destinationVC = segue.destination as! ChatsViewController
-      var destinationDS = destinationVC.router!.dataStore!
-      passDataToChats(source: dataStore!, destination: &destinationDS)
-    } else {
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let destinationVC = storyboard.instantiateViewController(withIdentifier: "Chats") as! ChatsViewController
-      var destinationDS = destinationVC.router!.dataStore!
-      passDataToChats(source: dataStore!, destination: &destinationDS)
-      navigateToChats(source: viewController!, destination: destinationVC)
-    }
-  }
-
-  // MARK: Navigation
-  
-  func navigateToChats(source: LoginViewController, destination: ChatsViewController)
-  {
-    source.show(destination, sender: nil)
-  }
-  
-  // MARK: Passing data
-  
-  func passDataToChats(source: LoginDataStore, destination: inout ChatsDataStore)
-  {
+    weak var viewController: LoginViewController?
+    var dataStore: LoginDataStore?
     
-  }
+    // MARK: Routing
+    
+    func routeToChats(segue: UIStoryboardSegue?)
+    {
+        if let segue = segue {
+            let destinationVC = segue.destination as! ChatsViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToChats(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "Chats") as! ChatsViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToChats(source: dataStore!, destination: &destinationDS)
+            navigateToChats(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToChats(source: LoginViewController, destination: ChatsViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
+    // MARK: Passing data
+    
+    func passDataToChats(source: LoginDataStore, destination: inout ChatsDataStore)
+    {
+        
+    }
 }

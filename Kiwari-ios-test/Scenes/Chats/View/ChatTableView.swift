@@ -21,7 +21,7 @@ class ChatTableView: UIView {
         bezierPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY-10))
         bezierPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY-10))
         bezierPath.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
-    
+        
         
         //Draw the tail
         if currentUserIsSender {

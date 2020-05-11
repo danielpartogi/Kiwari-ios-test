@@ -43,7 +43,7 @@ class LoginViewController: UIViewController
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var bottomLoginConstrain: NSLayoutConstraint!
     
-  
+    
     
     
     // MARK: Setup
@@ -82,7 +82,7 @@ class LoginViewController: UIViewController
         setupView()
     }
     
-  
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -101,7 +101,7 @@ class LoginViewController: UIViewController
         view.addGestureRecognizer(tap)
         
     }
-
+    
     
     // MARK: Handling Keyboard
     
@@ -130,7 +130,7 @@ class LoginViewController: UIViewController
     
     // MARK: unwind from anywhere
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-            
+        
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -139,7 +139,7 @@ class LoginViewController: UIViewController
     
     
     func displayLoginAlertDialog(title: String, message: String){
-     self.popupAlert(title: title, message: message, actionTitles: ["OK"], actions:[nil])
+        self.popupAlert(title: title, message: message, actionTitles: ["OK"], actions:[nil])
     }
 }
 

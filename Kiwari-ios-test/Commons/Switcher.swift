@@ -26,11 +26,11 @@ class Switcher {
             .first
         
         let transition = CATransition()
-
+        
         transition.type = .reveal
         transition.subtype = .fromBottom
         transition.duration = 0.2
-
+        
         window?.layer.add(transition, forKey: kCATransition)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()

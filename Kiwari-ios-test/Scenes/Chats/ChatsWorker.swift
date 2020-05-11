@@ -22,7 +22,7 @@ class ChatsWorker
                     case .added:
                         let chat = Chat(doc: dc.document.data())
                         if AppState.sharedInstance.isFirstListener() {
-                             print(dc.document.data())
+                            print(dc.document.data())
                             completion(.success(chat))
                         }
                         
@@ -42,14 +42,14 @@ class ChatsWorker
         FirebaseConstans.refs.databaseChats.order(by: "time", descending:  false).getDocuments{ query, err in
             if let err = err {
                 completion(.failure(err))
-               } else {
+            } else {
                 var data = [Chat]()
-                   for document in query!.documents {
+                for document in query!.documents {
                     let chat = Chat(doc: document.data())
                     data.append(chat)
-                   }
+                }
                 completion(.success(data))
-               }
+            }
             
         }
     }

@@ -18,12 +18,12 @@ import UIKit
 
 protocol ChatsDataPassing
 {
-  var dataStore: ChatsDataStore? { get }
+    var dataStore: ChatsDataStore? { get }
 }
 
 class ChatsRouter: NSObject, ChatsRoutingLogic, ChatsDataPassing
 {
-  weak var viewController: ChatsViewController?
-  var dataStore: ChatsDataStore?
-  
+    weak var viewController: ChatsViewController?
+    var dataStore: ChatsDataStore?
+    
 }

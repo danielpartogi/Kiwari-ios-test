@@ -19,10 +19,10 @@ protocol LoginPresentationLogic
 
 class LoginPresenter: LoginPresentationLogic
 {
-  weak var viewController: LoginDisplayLogic?
-  
-  // MARK: present Login Response
-  
+    weak var viewController: LoginDisplayLogic?
+    
+    // MARK: present Login Response
+    
     func presentLoginUser(res: Login.LoginUser.Response) {
         viewController?.displayLoginUser(vm: Login.LoginUser.ViewModel(data: res.data))
     }

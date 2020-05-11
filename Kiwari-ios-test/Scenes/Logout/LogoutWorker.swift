@@ -14,7 +14,7 @@ import UIKit
 
 class LogoutWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doSomeWork()
+    {
+    }
 }
